@@ -12,10 +12,11 @@ print("""
 lado = input("Impar ou Par?").upper()
 if lado == "IMPAR":
     print("Então eu sou o par")
-else:
+elif lado == "PAR":
     print("Então eu sou o impar")
-
-
+elif lado != "IMPAR" or lado !='PAR':
+    print("Não temos essa opção")
+    exit()
 
 numero1 = int(input("Qual será o número de 0 a 10 escolhido?"))
 numero2 = random.randint(0,10)
@@ -38,4 +39,3 @@ else:
             print(f"Parebens vc ganhou, o {resultado} é par")
         else:
             print(f"Você perdeu, o {resultado} é impar")
-

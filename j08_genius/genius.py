@@ -12,7 +12,7 @@ def jogar_genius():
 
     lista_cores = ["VERDE", "AZUL", "AMARELO", "VERMELHO", "LILAS"]
     lista_sequencia = []
-
+    contador = 0
 
     def limpar_tela():
         os.system("color 07")
@@ -60,7 +60,7 @@ def jogar_genius():
                             "R": "VERMELHO",
                             "L": "LILAS"}
         
-
+        contador += 1
         lista_resposta = []
         for letra in resposta:
             cor = dicionario_resposta.get(letra)
@@ -68,16 +68,19 @@ def jogar_genius():
 
         if lista_resposta != lista_sequencia:
             print("Você errou!")
+            print(f"Você chegou até a fase {contador}")
             print("A sequencia era:")
             print(*lista_sequencia)
+            input("Aperte ENTER para trocar ou continuar jogando")
             break
         else:
             print("Você acertou")
-            print("Vamos para a próxima fase ")
+            print(f"Vamos para a fase {contador + 1 }")
             input("Aperte ENTER quando estiver pronto ")
             limpar_tela()
 
-
+if __name__ == "__main__":
+    jogar_genius()
 
 
 

@@ -6,6 +6,7 @@ from j04_par_ou_impar.par_ou_impar import jogar_par_ou_impar
 from j05_qual_vc_escolhe.caos import jogar_caos
 from j06_cara_coroa.cara_ou_coroa import jogar_cara_ou_coroa
 from j07_adivinha.adivinha import jogar_adivinha
+from j08_genius.genius import jogar_genius
 print("""
           )             )                               
        ( /(  (       ( /(     *   )        (     (      
@@ -30,6 +31,7 @@ while True:
           05 = CAOS
           06 = CARA OU COROA
           07 = ADIVINHA O NÚMERO 2
+          08 = GENIUS
 
     ***********************************
     """)
@@ -48,6 +50,8 @@ while True:
         jogar_cara_ou_coroa()
     elif jogo == 7:
         jogar_adivinha()
+    elif jogo == 8:
+        jogar_genius()
     elif jogo == 0:
         print("Foi ótimo jogar com você")
         break

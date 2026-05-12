@@ -72,7 +72,7 @@ def jogar_genius():
             print(*lista_sequencia)
             break
         else:
-            print("Você acoertou")
+            print("Você acertou")
             print("Vamos para a próxima fase ")
             input("Aperte ENTER quando estiver pronto ")
             limpar_tela()

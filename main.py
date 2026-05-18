@@ -32,6 +32,7 @@ while True:
           06 = CARA OU COROA
           07 = ADIVINHA O NÚMERO 2
           08 = GENIUS
+          09 = FORCA
 
     ***********************************
     """)
@@ -55,3 +56,4 @@ while True:
     elif jogo == 0:
         print("Foi ótimo jogar com você")
         break
+    

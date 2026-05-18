@@ -28,7 +28,7 @@ def desenhar_forca(erro:int):
         print("""
             _ _ _ _ _
             |       |
-            |     (° °)
+            |    (⊙_◎)
             |
             |
             |
@@ -41,7 +41,7 @@ def desenhar_forca(erro:int):
         print("""
             _ _ _ _ _
             |       |
-            |     (° °)
+            |    (⊙_◎)
             |       |
             |       |
             |       
@@ -55,7 +55,7 @@ def desenhar_forca(erro:int):
         print("""
             _ _ _ _ _
             |       |
-            |     (° °)
+            |    (⊙_◎)
             |      _|
             |       |
             |       
@@ -69,7 +69,7 @@ def desenhar_forca(erro:int):
         print("""
             _ _ _ _ _
             |       |
-            |     (° °)
+            |    (⊙_◎)
             |      _|_
             |       |
             |       
@@ -84,7 +84,7 @@ def desenhar_forca(erro:int):
         print("""
             _ _ _ _ _
             |       |
-            |     (° °)
+            |    (⊙_◎)
             |      _|_
             |       |
             |      /
@@ -98,7 +98,7 @@ def desenhar_forca(erro:int):
         print(r"""
             _ _ _ _ _
             |       |
-            |     (° °)
+            |      💀
             |      _|_
             |       |
             |      / \
@@ -117,3 +117,26 @@ def gerar_tracos (palavra:str) -> list:
 
 lista_tracos = gerar_tracos("casa")
 print(*lista_tracos)
+
+def perguntar_letra() ->str:
+    resposta = input("Me de uma letra ").upper()
+    while len(resposta) != 1:
+        resposta = input("Eu disse apenas UMA letra: ").upper()
+    return resposta
+
+letra = perguntar_letra()
+print(letra)
+    
+def jogar_forca():
+    print("""
+ _____   ___   ____      __   ____ 
+|     | /   \ |    \    /  ] /    |
+|   __||     ||  D  )  /  / |  o  |
+|  |_  |  O  ||    /  /  /  |     |
+|   _] |     ||    \ /   \_ |  _  |
+|  |   |     ||  .  \\     ||  |  |
+|__|    \___/ |__|\_| \____||__|__|                      
+""")
+    
+if __name__ == "__main__":
+    jogar_forca()

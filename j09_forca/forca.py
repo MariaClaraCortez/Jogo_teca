@@ -12,7 +12,7 @@ def escolher_palavra() -> str:
 
 limpar_tela()
 
-def desenhar_forca(erro):
+def desenhar_forca(erro:int):
     if erro == 0:
         print("""
             _ _ _ _ _
@@ -107,5 +107,13 @@ def desenhar_forca(erro):
             |
             """)
 
+def gerar_tracos (palavra:str) -> list:
+    """gera e retorna uma lisa contendo _ na mesma quantidade que as palavras"""
+    quantidade_de_letras = len(palavra)
+    tracos = []
+    while len(tracos)< quantidade_de_letras:
+        tracos.append("_")
+    return tracos
 
-    
+lista_tracos = gerar_tracos("casa")
+print(*lista_tracos)

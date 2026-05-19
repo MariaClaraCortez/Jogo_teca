@@ -6,7 +6,7 @@ def limpar_tela():
 
 def escolher_palavra() -> str:
     palavras = ["BROCOLIS","LARANJA","TRIANGULO","REMEDIO","MORCEGO","ACEROLA", "BICICLETA"]
-    palavra_aleatoria = random.choice(palavras)
+    palavra_aleatoria = random.choice(palavras).upper()
 
     return palavra_aleatoria
 
@@ -150,6 +150,7 @@ def jogar_forca():
         contador = 0
         escolha = escolher_palavra()
         lista_tracos = gerar_tracos(escolha)
+        lista_tentativas = []
         
         
         while True:
@@ -158,11 +159,17 @@ def jogar_forca():
             desenhar_forca(contador)
 
             print("              ",*lista_tracos)
+            print("Suas tentivas foram: ",*lista_tentativas)
+
+            if "_" not in lista_tracos:
+                print("Você ganhou!!🥳🥳")
+                break
 
             letra = perguntar_letra()
 
             if letra not in escolha:
                 contador += 1
+                lista_tentativas.append(letra)
             if contador >= 6:
                 print("Você Perdeu👎")
                 print(f"A palavra era: {escolha}")
@@ -173,9 +180,7 @@ def jogar_forca():
                     if lp == letra:
                         lista_tracos[contador_lista] = letra
                     contador_lista += 1
-            if "_" not in lista_tracos:
-                print("Você ganhou!!")
-                break
+            
 
 
 

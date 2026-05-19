@@ -29,7 +29,7 @@ def desenhar_forca(erro:int):
         print("""
             _ _ _ _ _
             |       |
-            |    (⊙_◎)
+            |      😰
             |
             |
             |
@@ -37,13 +37,13 @@ def desenhar_forca(erro:int):
             |
             |
             """)
-        limpar_tela()
+        
 
     elif erro == 2:
         print("""
             _ _ _ _ _
             |       |
-            |    (⊙_◎)
+            |      😰
             |       |
             |       |
             |       
@@ -58,7 +58,7 @@ def desenhar_forca(erro:int):
         print("""
             _ _ _ _ _
             |       |
-            |    (⊙_◎)
+            |      😰
             |      _|
             |       |
             |       
@@ -73,7 +73,7 @@ def desenhar_forca(erro:int):
         print("""
             _ _ _ _ _
             |       |
-            |    (⊙_◎)
+            |      😰
             |      _|_
             |       |
             |       
@@ -89,7 +89,7 @@ def desenhar_forca(erro:int):
         print("""
             _ _ _ _ _
             |       |
-            |    (⊙_◎)
+            |      😰
             |      _|_
             |       |
             |      /
@@ -147,21 +147,38 @@ def jogar_forca():
         """)
 
         input("aperte ENTER para começar... ")
+        contador = 0
+        escolha = escolher_palavra()
+        lista_tracos = gerar_tracos(escolha)
+        
+        
         while True:
             limpar_tela()
-            contador = 0
 
             desenhar_forca(contador)
 
-            escolha = escolher_palavra()
-
-            lista_tracos = gerar_tracos(escolha)
             print("              ",*lista_tracos)
 
             letra = perguntar_letra()
 
             if letra not in escolha:
                 contador += 1
+            if contador >= 6:
+                print("Você Perdeu👎")
+                print(f"A palavra era: {escolha}")
+                break
+            if letra in escolha:
+                contador_lista = 0
+                for lp in escolha:
+                    if lp == letra:
+                        lista_tracos[contador_lista] = letra
+                    contador_lista += 1
+            if "_" not in lista_tracos:
+                print("Você ganhou!!")
+                break
+
+
+
 
 
 

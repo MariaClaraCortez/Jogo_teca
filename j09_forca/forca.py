@@ -23,12 +23,14 @@ def desenhar_forca(erro:int):
             |
             |
             |
+            |
             """)
     elif erro == 1:
         print("""
             _ _ _ _ _
             |       |
             |    (⊙_◎)
+            |
             |
             |
             |
@@ -48,6 +50,7 @@ def desenhar_forca(erro:int):
             |
             |
             |
+            |
             """)
         
 
@@ -62,6 +65,7 @@ def desenhar_forca(erro:int):
             |
             |
             |
+            |
             """)
         
 
@@ -73,6 +77,7 @@ def desenhar_forca(erro:int):
             |      _|_
             |       |
             |       
+            |
             |
             |
             |
@@ -91,6 +96,7 @@ def desenhar_forca(erro:int):
             |
             |
             |
+            |
             """)
         
 
@@ -105,6 +111,7 @@ def desenhar_forca(erro:int):
             |
             |
             |
+            |
             """)
 
 def gerar_tracos (palavra:str) -> list:
@@ -115,8 +122,8 @@ def gerar_tracos (palavra:str) -> list:
         tracos.append("_")
     return tracos
 
-lista_tracos = gerar_tracos("casa")
-print(*lista_tracos)
+#lista_tracos = gerar_tracos("casa")
+#print(*lista_tracos)
 
 def perguntar_letra() ->str:
     resposta = input("Me de uma letra ").upper()
@@ -124,19 +131,39 @@ def perguntar_letra() ->str:
         resposta = input("Eu disse apenas UMA letra: ").upper()
     return resposta
 
-letra = perguntar_letra()
-print(letra)
-    
+#letra = perguntar_letra()
+#print(letra)
+
+
 def jogar_forca():
-    print("""
- _____   ___   ____      __   ____ 
-|     | /   \ |    \    /  ] /    |
-|   __||     ||  D  )  /  / |  o  |
-|  |_  |  O  ||    /  /  /  |     |
-|   _] |     ||    \ /   \_ |  _  |
-|  |   |     ||  .  \\     ||  |  |
-|__|    \___/ |__|\_| \____||__|__|                      
-""")
-    
+        print(r"""
+        _____   ___   ____      __   ____ 
+        |     | /   \ |    \    /  ] /    |
+        |   __||     ||  D  )  /  / |  o  |
+        |  |_  |  O  ||    /  /  /  |     |
+        |   _] |     ||    \ /   \_ |  _  |
+        |  |   |     ||  .  \\     ||  |  |
+        |__|    \___/ |__|\_| \____||__|__|                      
+        """)
+
+        input("aperte ENTER para começar... ")
+        while True:
+            limpar_tela()
+            contador = 0
+
+            desenhar_forca(contador)
+
+            escolha = escolher_palavra()
+
+            lista_tracos = gerar_tracos(escolha)
+            print("              ",*lista_tracos)
+
+            letra = perguntar_letra()
+
+            if letra not in escolha:
+                contador += 1
+
+
+
 if __name__ == "__main__":
     jogar_forca()
